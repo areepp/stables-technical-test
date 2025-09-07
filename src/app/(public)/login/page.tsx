@@ -7,8 +7,10 @@ export default function LoginPage() {
       <div className="hidden lg:flex lg:w-1/2 bg-gradient-to-br from-emerald-400 via-teal-500 to-cyan-600 relative overflow-hidden">
         <div className="relative z-10 flex flex-col justify-between p-12 text-white w-full">
           <div className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-white rounded-lg flex items-center justify-center">
-              <span className="text-emerald-600 font-bold text-lg">$</span>
+            <div className="w-8 h-8 bg-accent rounded-full flex items-center justify-center">
+              <span className="text-accent-foreground font-bold text-sm">
+                S
+              </span>
             </div>
             <span className="text-2xl font-bold">Stables</span>
           </div>
