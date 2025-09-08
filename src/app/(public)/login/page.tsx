@@ -1,17 +1,20 @@
+import AtomAnimation from './atom-animation'
 import { LoginForm } from './login-form'
 
 export default function LoginPage() {
   return (
     <div className="flex min-h-screen">
       {/* LEFT SIDE */}
-      <div className="relative hidden overflow-hidden bg-gradient-to-br from-emerald-400 via-teal-500 to-cyan-600 lg:flex lg:w-1/2">
-        <div className="relative z-10 flex w-full flex-col justify-between p-12 text-white">
+      <div className="from-secondary to-primary relative hidden overflow-hidden bg-gradient-to-br lg:flex lg:w-1/2">
+        <div className="text-primary-foreground relative z-10 flex w-full flex-col justify-between p-12">
           <div className="flex items-center space-x-2">
             <div className="bg-accent flex h-8 w-8 items-center justify-center rounded-full">
               <span className="text-accent-foreground text-sm font-bold">S</span>
             </div>
             <span className="text-2xl font-bold">Stables</span>
           </div>
+
+          <AtomAnimation />
 
           <div className="space-y-6">
             <div className="space-y-4">
@@ -20,13 +23,14 @@ export default function LoginPage() {
                 <br />
                 Unstoppable Growth
               </h1>
-              <p className="max-w-md text-lg text-white/90">
+              <p className="text-primary-foreground/80 max-w-md text-lg">
                 Your secure gateway to the world of stablecoins. Trade, save, and grow with
                 confidence.
               </p>
             </div>
           </div>
         </div>
+
         {/* BLURRY CIRCLES */}
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-20 left-20 h-32 w-32 rounded-full bg-white blur-lg"></div>

@@ -43,10 +43,7 @@ export function LoginForm() {
               </button>
             </div>
           </div>
-          <Button
-            type="submit"
-            className="w-full bg-emerald-600 py-2.5 font-medium text-white hover:bg-emerald-700"
-          >
+          <Button type="submit" className="w-full">
             Log in
           </Button>
         </form>
