@@ -1,6 +1,7 @@
 import { Card } from '@/components/ui/card'
-import { ArrowDownLeft, ArrowUpRight, ChevronDown } from 'lucide-react'
+import { ArrowDownLeft, ChevronDown } from 'lucide-react'
 import { Button } from '@/components/ui/button'
+import { SendModal } from './send-modal'
 
 export default function BalanceAndActions() {
   return (
@@ -22,10 +23,7 @@ export default function BalanceAndActions() {
         </div>
       </Card>
       <div className="grid grid-cols-2 gap-4">
-        <Button size="lg">
-          <ArrowUpRight className="h-5 w-5 mr-2" />
-          Send
-        </Button>
+        <SendModal />
 
         <Button size="lg" variant="outline">
           <ArrowDownLeft className="h-5 w-5 mr-2" />
