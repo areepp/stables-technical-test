@@ -1,0 +1,2 @@
+export const MOCK_WALLET_ADDRESS =
+  '8H2uQsm8XJc9vK4L3nP7wR5tY6mE1qA9sD4fG7hJ2kN3'
