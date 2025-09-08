@@ -58,7 +58,7 @@ export function SendModal() {
   return (
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
       <DialogTrigger asChild>
-        <Button size="lg">
+        <Button size="lg" variant="outline-no-shadow">
           <ArrowUpRight className="mr-2 h-5 w-5" />
           Send
         </Button>

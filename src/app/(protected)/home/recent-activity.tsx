@@ -105,7 +105,7 @@ export function RecentActivity() {
                   className={`flex h-10 w-10 items-center justify-center rounded-full ${
                     transaction.type === 'send'
                       ? 'bg-red-100 text-red-600'
-                      : 'bg-yellow-200 text-yellow-700'
+                      : 'bg-primary text-primary-foreground'
                   }`}
                 >
                   {transaction.type === 'send' ? (
@@ -127,7 +127,7 @@ export function RecentActivity() {
                 </div>
               </div>
 
-              <div className="text-right">
+              <div className="text-right text-sm">
                 <div
                   className={`font-semibold ${
                     transaction.type === 'send' ? 'text-red-600' : 'text-green-600'

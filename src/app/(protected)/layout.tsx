@@ -4,7 +4,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
     <>
       <Header />
-      <div className="min-h-screen pt-16 pb-24">{children}</div>
+      <div className="min-h-screen py-24">{children}</div>
     </>
   )
 }

@@ -5,6 +5,7 @@ import { Input } from '@/components/ui/input'
 import { Separator } from '@/components/ui/separator'
 import { Eye, EyeOff } from 'lucide-react'
 import Image from 'next/image'
+import Link from 'next/link'
 import { useState } from 'react'
 
 export function LoginForm() {
@@ -43,8 +44,8 @@ export function LoginForm() {
               </button>
             </div>
           </div>
-          <Button type="submit" className="w-full">
-            Log in
+          <Button type="submit" className="w-full" asChild>
+            <Link href="/home">Log in</Link>
           </Button>
         </form>
         <div className="relative">
