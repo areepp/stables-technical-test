@@ -3,8 +3,8 @@ import { RecentActivity } from './recent-activity'
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen bg-background">
-      <div className="max-w-md mx-auto px-6 space-y-6">
+    <div className="bg-background min-h-screen">
+      <div className="mx-auto max-w-md space-y-6 px-6">
         <BalanceAndActions />
         <RecentActivity />
       </div>

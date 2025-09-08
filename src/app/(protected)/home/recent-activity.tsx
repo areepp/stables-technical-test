@@ -1,6 +1,6 @@
 import { Card } from '@/components/ui/card'
 import { format } from 'date-fns'
-import { ArrowUpRight, ArrowDownLeft } from 'lucide-react'
+import { ArrowDownLeft, ArrowUpRight } from 'lucide-react'
 
 const MOCK_TRANSACTIONS = [
   {
@@ -89,24 +89,20 @@ export function RecentActivity() {
   return (
     <div className="space-y-4">
       <div className="flex items-center justify-between">
-        <h2 className="text-lg font-semibold text-card-foreground">
-          Recent Activity
-        </h2>
-        <button className="text-sm text-accent hover:text-accent/80">
-          View All
-        </button>
+        <h2 className="text-card-foreground text-lg font-semibold">Recent Activity</h2>
+        <button className="text-accent hover:text-accent/80 text-sm">View All</button>
       </div>
 
       <div className="space-y-3">
         {MOCK_TRANSACTIONS.map((transaction) => (
           <Card
             key={transaction.id}
-            className="p-4 bg-card border-border hover:bg-secondary/50 transition-colors cursor-pointer"
+            className="bg-card border-border hover:bg-secondary/50 cursor-pointer p-4 transition-colors"
           >
             <div className="flex items-center justify-between">
               <div className="flex items-center space-x-3">
                 <div
-                  className={`w-10 h-10 rounded-full flex items-center justify-center ${
+                  className={`flex h-10 w-10 items-center justify-center rounded-full ${
                     transaction.type === 'send'
                       ? 'bg-red-100 text-red-600'
                       : 'bg-yellow-200 text-yellow-700'
@@ -121,11 +117,11 @@ export function RecentActivity() {
 
                 <div className="space-y-1">
                   <div className="flex items-center space-x-2">
-                    <span className="text-sm font-medium text-card-foreground">
+                    <span className="text-card-foreground text-sm font-medium">
                       {transaction.address}
                     </span>
                   </div>
-                  <div className="text-xs text-muted-foreground">
+                  <div className="text-muted-foreground text-xs">
                     {format(new Date(transaction.createdAt), 'MMM dd, yyyy')}
                   </div>
                 </div>
@@ -134,9 +130,7 @@ export function RecentActivity() {
               <div className="text-right">
                 <div
                   className={`font-semibold ${
-                    transaction.type === 'send'
-                      ? 'text-red-600'
-                      : 'text-green-600'
+                    transaction.type === 'send' ? 'text-red-600' : 'text-green-600'
                   }`}
                 >
                   {transaction.amount}

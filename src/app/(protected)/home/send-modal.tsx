@@ -1,23 +1,18 @@
 'use client'
 
-import { useState } from 'react'
 import { Button } from '@/components/ui/button'
-import { Input } from '@/components/ui/input'
-import { Label } from '@/components/ui/label'
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-} from '@/components/ui/dialog'
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog'
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu'
-import { ArrowUpRight, ChevronDown } from 'lucide-react'
+import { Input } from '@/components/ui/input'
+import { Label } from '@/components/ui/label'
 import { DialogTrigger } from '@radix-ui/react-dialog'
+import { ArrowUpRight, ChevronDown } from 'lucide-react'
+import { useState } from 'react'
 
 const STABLE_COINS = [
   {
@@ -64,7 +59,7 @@ export function SendModal() {
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
       <DialogTrigger asChild>
         <Button size="lg">
-          <ArrowUpRight className="h-5 w-5 mr-2" />
+          <ArrowUpRight className="mr-2 h-5 w-5" />
           Send
         </Button>
       </DialogTrigger>
@@ -77,26 +72,21 @@ export function SendModal() {
           <div>
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button
-                  variant="outline"
-                  className="w-full justify-between py-8"
-                >
+                <Button variant="outline" className="w-full justify-between py-8">
                   <div className="flex items-center gap-3">
                     <div
-                      className={`w-8 h-8 rounded-full ${selectedCoin.color} flex items-center justify-center text-white text-sm font-bold`}
+                      className={`h-8 w-8 rounded-full ${selectedCoin.color} flex items-center justify-center text-sm font-bold text-white`}
                     >
                       {selectedCoin.symbol[0]}
                     </div>
                     <div className="text-left">
-                      <div className="font-medium text-card-foreground text-sm">
+                      <div className="text-card-foreground text-sm font-medium">
                         {selectedCoin.symbol}
                       </div>
-                      <div className="text-xs text-muted-foreground">
-                        {selectedCoin.name}
-                      </div>
+                      <div className="text-muted-foreground text-xs">{selectedCoin.name}</div>
                     </div>
                   </div>
-                  <ChevronDown className="h-4 w-4 text-muted-foreground" />
+                  <ChevronDown className="text-muted-foreground h-4 w-4" />
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent className="w-full min-w-[var(--radix-dropdown-menu-trigger-width)]">
@@ -107,19 +97,15 @@ export function SendModal() {
                     className="flex items-center gap-3 p-3"
                   >
                     <div
-                      className={`w-6 h-6 rounded-full ${coin.color} flex items-center justify-center text-white text-xs font-bold`}
+                      className={`h-6 w-6 rounded-full ${coin.color} flex items-center justify-center text-xs font-bold text-white`}
                     >
                       {coin.symbol[0]}
                     </div>
                     <div className="flex-1">
-                      <div className="font-medium text-sm">{coin.symbol}</div>
-                      <div className="text-xs text-muted-foreground">
-                        {coin.name}
-                      </div>
+                      <div className="text-sm font-medium">{coin.symbol}</div>
+                      <div className="text-muted-foreground text-xs">{coin.name}</div>
                     </div>
-                    <div className="text-sm text-muted-foreground">
-                      {coin.balance}
-                    </div>
+                    <div className="text-muted-foreground text-sm">{coin.balance}</div>
                   </DropdownMenuItem>
                 ))}
               </DropdownMenuContent>
@@ -127,10 +113,7 @@ export function SendModal() {
           </div>
 
           <div className="space-y-1">
-            <Label
-              htmlFor="recipient"
-              className="text-sm text-muted-foreground"
-            >
+            <Label htmlFor="recipient" className="text-muted-foreground text-sm">
               Recipient Address
             </Label>
             <Input
@@ -142,7 +125,7 @@ export function SendModal() {
           </div>
 
           <div className="space-y-1">
-            <Label htmlFor="amount" className="text-sm text-muted-foreground">
+            <Label htmlFor="amount" className="text-muted-foreground text-sm">
               Amount
             </Label>
             <div className="relative">
@@ -154,7 +137,7 @@ export function SendModal() {
                 onChange={(e) => setAmount(e.target.value)}
               />
             </div>
-            <div className="text-xs text-muted-foreground">
+            <div className="text-muted-foreground text-xs">
               Balance: {selectedCoin.balance} {selectedCoin.symbol}
             </div>
           </div>
@@ -164,7 +147,7 @@ export function SendModal() {
             disabled={!recipient || !amount || Number.parseFloat(amount) <= 0}
             className="w-full"
           >
-            <ArrowUpRight className="h-4 w-4 mr-2" />
+            <ArrowUpRight className="mr-2 h-4 w-4" />
             Send {selectedCoin.symbol}
           </Button>
         </div>

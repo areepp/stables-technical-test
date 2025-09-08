@@ -1,11 +1,11 @@
 'use client'
 
-import Image from 'next/image'
-import { useState } from 'react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Separator } from '@/components/ui/separator'
 import { Eye, EyeOff } from 'lucide-react'
+import Image from 'next/image'
+import { useState } from 'react'
 
 export function LoginForm() {
   const [showPassword, setShowPassword] = useState(false)
@@ -17,7 +17,7 @@ export function LoginForm() {
       </div>
 
       <div className="space-y-6">
-        <form className="space-y-4 mt-8">
+        <form className="mt-8 space-y-4">
           <div className="space-y-2">
             <Input
               id="email"
@@ -32,41 +32,32 @@ export function LoginForm() {
                 id="password"
                 type={showPassword ? 'text' : 'password'}
                 placeholder="Enter your password"
-                className="border-gray-200 focus:border-emerald-500 focus:ring-emerald-500 pr-10"
+                className="border-gray-200 pr-10 focus:border-emerald-500 focus:ring-emerald-500"
               />
               <button
                 type="button"
                 onClick={() => setShowPassword(!showPassword)}
-                className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600"
+                className="absolute top-1/2 right-3 -translate-y-1/2 text-gray-400 hover:text-gray-600"
               >
-                {showPassword ? (
-                  <EyeOff className="w-4 h-4" />
-                ) : (
-                  <Eye className="w-4 h-4" />
-                )}
+                {showPassword ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
               </button>
             </div>
           </div>
           <Button
             type="submit"
-            className="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-2.5"
+            className="w-full bg-emerald-600 py-2.5 font-medium text-white hover:bg-emerald-700"
           >
             Log in
           </Button>
         </form>
         <div className="relative">
           <Separator />
-          <span className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-gray-50 px-3 text-sm text-muted-foreground">
+          <span className="text-muted-foreground absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-gray-50 px-3 text-sm">
             Or continue with
           </span>
         </div>
         <Button variant="outline" className="w-full">
-          <Image
-            src="/svg/metamask-icon-fox.svg"
-            alt="Metamask"
-            width={16}
-            height={16}
-          />
+          <Image src="/svg/metamask-icon-fox.svg" alt="Metamask" width={16} height={16} />
           Metamask
         </Button>
       </div>

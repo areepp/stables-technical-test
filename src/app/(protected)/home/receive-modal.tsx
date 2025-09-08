@@ -1,5 +1,6 @@
 'use client'
 
+import { Button } from '@/components/ui/button'
 import {
   Dialog,
   DialogContent,
@@ -7,12 +8,11 @@ import {
   DialogTitle,
   DialogTrigger,
 } from '@/components/ui/dialog'
-import { Button } from '@/components/ui/button'
-import { Copy, Check, ArrowDownLeft } from 'lucide-react'
+import useCopyToClipboard from '@/hooks/use-copy-to-clipboard'
+import { MOCK_WALLET_ADDRESS } from '@/lib/constants'
+import { ArrowDownLeft, Check, Copy } from 'lucide-react'
 import { useState } from 'react'
 import QRCode from 'react-qr-code'
-import { MOCK_WALLET_ADDRESS } from '@/lib/constants'
-import useCopyToClipboard from '@/hooks/use-copy-to-clipboard'
 
 export function ReceiveModal() {
   const [isOpen, setIsOpen] = useState(false)
@@ -23,19 +23,17 @@ export function ReceiveModal() {
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
       <DialogTrigger>
         <Button size="lg" variant="outline" className="w-full">
-          <ArrowDownLeft className="h-5 w-5 mr-2" />
+          <ArrowDownLeft className="mr-2 h-5 w-5" />
           Receive
         </Button>
       </DialogTrigger>
       <DialogContent className="sm:max-w-md">
         <DialogHeader>
-          <DialogTitle className="text-center text-xl font-semibold">
-            Receive
-          </DialogTitle>
+          <DialogTitle className="text-center text-xl font-semibold">Receive</DialogTitle>
         </DialogHeader>
 
         <div className="flex flex-col items-center space-y-6 py-4">
-          <div className="w-48 h-48 bg-muted rounded-lg flex items-center justify-center border-2 border-dashed border-border">
+          <div className="bg-muted border-border flex h-48 w-48 items-center justify-center rounded-lg border-2 border-dashed">
             <QRCode
               value={MOCK_WALLET_ADDRESS}
               style={{ height: 'auto', maxWidth: '100%', width: '100%' }}
@@ -43,10 +41,8 @@ export function ReceiveModal() {
           </div>
 
           <div className="w-full space-y-2">
-            <div className="flex items-center space-x-2 p-3 bg-muted rounded-lg">
-              <code className="flex-1 text-sm font-mono break-all">
-                {MOCK_WALLET_ADDRESS}
-              </code>
+            <div className="bg-muted flex items-center space-x-2 rounded-lg p-3">
+              <code className="flex-1 font-mono text-sm break-all">{MOCK_WALLET_ADDRESS}</code>
               <Button
                 size="sm"
                 variant="ghost"
@@ -62,7 +58,7 @@ export function ReceiveModal() {
             </div>
           </div>
 
-          <p className="text-xs text-muted-foreground text-center max-w-sm">
+          <p className="text-muted-foreground max-w-sm text-center text-xs">
             Share this wallet address or QR code to receive payments.
           </p>
         </div>

@@ -1,25 +1,19 @@
+import { Button } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
 import { ChevronDown } from 'lucide-react'
-import { Button } from '@/components/ui/button'
-import { SendModal } from './send-modal'
 import { ReceiveModal } from './receive-modal'
+import { SendModal } from './send-modal'
 
 export default function BalanceAndActions() {
   return (
     <>
-      <Card className="p-6 bg-card border-border gap-2">
-        <span className="text-sm text-muted-foreground">Balance</span>
+      <Card className="bg-card border-border gap-2 p-6">
+        <span className="text-muted-foreground text-sm">Balance</span>
         <div className="flex items-center justify-between">
-          <div className="text-xl font-bold text-card-foreground">
-            11,500.38
-          </div>
-          <Button
-            variant="ghost"
-            size="sm"
-            className="text-muted-foreground p-0 h-auto"
-          >
+          <div className="text-card-foreground text-xl font-bold">11,500.38</div>
+          <Button variant="ghost" size="sm" className="text-muted-foreground h-auto p-0">
             USDC
-            <ChevronDown className="h-4 w-4 ml-1" />
+            <ChevronDown className="ml-1 h-4 w-4" />
           </Button>
         </div>
       </Card>
