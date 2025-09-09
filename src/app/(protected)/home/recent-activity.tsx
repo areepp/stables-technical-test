@@ -114,17 +114,15 @@ export function RecentActivity() {
 
               <div className="space-y-1">
                 <div className="flex items-center space-x-2">
-                  <span className="text-card-foreground text-sm font-medium">
-                    {transaction.address}
-                  </span>
+                  <span className="text-card-foreground font-medium">{transaction.address}</span>
                 </div>
-                <div className="text-muted-foreground text-xs">
+                <div className="text-muted-foreground text-sm">
                   {format(new Date(transaction.createdAt), 'MMM dd, yyyy')}
                 </div>
               </div>
             </div>
 
-            <div className="text-right text-sm">
+            <div className="text-right">
               <div
                 className={cn(
                   'font-semibold',

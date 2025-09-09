@@ -5,7 +5,7 @@ import { RecentActivity } from './recent-activity'
 export default function HomePage() {
   return (
     <div className="bg-background min-h-screen">
-      <div className="mx-auto max-w-md space-y-16 px-6">
+      <div className="mx-auto max-w-lg space-y-16 px-6">
         <Reveal>
           <BalanceAndActions />
         </Reveal>

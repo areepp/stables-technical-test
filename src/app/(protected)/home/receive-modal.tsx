@@ -33,7 +33,7 @@ export function ReceiveModal() {
           Receive
         </HoverButton>
       </DialogTrigger>
-      <DialogContent className="sm:max-w-xs">
+      <DialogContent className="sm:max-w-sm">
         <DialogHeader>
           <DialogTitle>Receive</DialogTitle>
         </DialogHeader>
@@ -48,7 +48,7 @@ export function ReceiveModal() {
 
           <div className="w-full space-y-2">
             <div className="bg-muted flex items-center space-x-2 rounded-lg p-3">
-              <code className="flex-1 font-mono text-sm break-all">{MOCK_WALLET_ADDRESS}</code>
+              <code className="flex-1 font-mono break-all">{MOCK_WALLET_ADDRESS}</code>
               <Button
                 size="sm"
                 variant="ghost"
@@ -64,7 +64,7 @@ export function ReceiveModal() {
             </div>
           </div>
 
-          <p className="text-muted-foreground max-w-sm text-center text-xs">
+          <p className="text-muted-foreground max-w-sm text-center text-sm">
             Share this wallet address or QR code to receive payments.
           </p>
         </div>

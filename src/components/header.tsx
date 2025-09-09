@@ -15,8 +15,6 @@ import { Reveal } from './reveal'
 import { Button } from './ui/button'
 
 const Header = () => {
-  console.log('asdasdf', RemoveScroll.classNames.zeroRight)
-
   return (
     <header
       className={cn(
@@ -24,7 +22,7 @@ const Header = () => {
         RemoveScroll.classNames.fullWidth,
       )}
     >
-      <div className="container mx-auto flex h-full w-full max-w-md items-center justify-between px-6">
+      <div className="container mx-auto flex h-full w-full max-w-lg items-center justify-between px-6">
         <Reveal>
           <div className="flex items-center space-x-3">
             <Image
@@ -48,7 +46,7 @@ const Header = () => {
               <DropdownMenuItem asChild>
                 <Link href="/login" className="w-full">
                   <LogOut className="mr-2 h-4 w-4" />
-                  <span className="text-xs font-bold">Log In</span>
+                  <span className="text-sm font-bold">Log In</span>
                 </Link>
               </DropdownMenuItem>
             </DropdownMenuContent>

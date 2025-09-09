@@ -13,9 +13,9 @@ export default function BalanceAndActions() {
   const [showBalance, setShowBalance] = useState(true)
 
   return (
-    <Card className="bg-primary relative gap-1 border-0 p-4 pb-8 shadow-none">
+    <Card className="bg-primary relative gap-1 border-0 p-4 pb-10 shadow-none">
       <div className="flex items-center">
-        <span className="text-muted-foreground text-sm">Balance</span>
+        <span className="text-muted-foreground">Balance</span>
         <Button
           onClick={() => setShowBalance(!showBalance)}
           variant="ghost"
@@ -30,7 +30,7 @@ export default function BalanceAndActions() {
         </Button>
       </div>
       <div className="flex items-center justify-between">
-        <div className="text-card-foreground text-xl font-bold">
+        <div className="text-card-foreground text-2xl font-bold">
           {showBalance ? selectedCoin.balance : '*****'} {selectedCoin.symbol}
         </div>
         <StablecoinDropdown value={selectedCoin} onValueChange={setSelectedCoin} />

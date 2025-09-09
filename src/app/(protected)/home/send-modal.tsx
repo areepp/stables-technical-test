@@ -20,7 +20,6 @@ export function SendModal() {
 
   const handleSend = () => {
     //  just close modal for now
-    console.log('Sending', amount, selectedCoin.symbol, 'to', recipient)
     setIsOpen(false)
     setRecipient('')
     setAmount('')
@@ -45,7 +44,7 @@ export function SendModal() {
           Send
         </HoverButton>
       </DialogTrigger>
-      <DialogContent className="sm:max-w-xs">
+      <DialogContent className="sm:max-w-sm">
         <DialogHeader>
           <DialogTitle>Send</DialogTitle>
         </DialogHeader>
@@ -72,9 +71,9 @@ export function SendModal() {
               value={amount}
               onChange={(e) => setAmount(e.target.value)}
               placeholder="0.00"
-              className="w-full border-0 text-center text-3xl font-bold italic [moz-appearance:textfield] focus:outline-none [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
+              className="w-full border-0 text-center text-4xl font-bold italic [moz-appearance:textfield] focus:outline-none [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
             />
-            <div className="text-muted-foreground text-xs">
+            <div className="text-muted-foreground text-sm">
               Balance: {selectedCoin.balance} {selectedCoin.symbol}
             </div>
           </div>
