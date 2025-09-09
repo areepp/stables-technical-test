@@ -23,7 +23,7 @@ const itemVariants = {
 
 export default function LoginPage() {
   return (
-    <div className="flex min-h-screen">
+    <div className="flex min-h-screen lg:max-h-screen">
       {/* LEFT SIDE */}
       <div className="from-secondary to-primary relative hidden overflow-hidden bg-gradient-to-br lg:flex lg:w-1/2">
         <motion.div
@@ -47,21 +47,19 @@ export default function LoginPage() {
             <AtomAnimation />
           </Reveal>
 
-          <div className="space-y-6">
-            <div className="space-y-4">
-              <motion.h1 variants={itemVariants} className="text-4xl leading-tight font-bold">
-                Stable Value,
-                <br />
-                Unstoppable Growth
-              </motion.h1>
-              <motion.p
-                variants={itemVariants}
-                className="text-primary-foreground/80 max-w-md text-lg"
-              >
-                Your secure gateway to the world of stablecoins. Trade, save, and grow with
-                confidence.
-              </motion.p>
-            </div>
+          <div className="space-y-4">
+            <motion.h1 variants={itemVariants} className="text-4xl leading-tight font-bold">
+              Stable Value,
+              <br />
+              Unstoppable Growth
+            </motion.h1>
+            <motion.p
+              variants={itemVariants}
+              className="text-primary-foreground/80 max-w-md text-lg"
+            >
+              Your secure gateway to the world of stablecoins. Trade, save, and grow with
+              confidence.
+            </motion.p>
           </div>
         </motion.div>
 
