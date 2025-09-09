@@ -2,6 +2,7 @@
 
 import { Reveal } from '@/components/reveal'
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 import AtomAnimation from './atom-animation'
 import { LoginForm } from './login-form'
 
@@ -32,10 +33,14 @@ export default function LoginPage() {
           animate="show"
         >
           <motion.div variants={itemVariants} className="flex items-center space-x-2">
-            <div className="bg-accent flex h-8 w-8 items-center justify-center rounded-full">
-              <span className="text-accent-foreground text-sm font-bold">S</span>
-            </div>
-            <span className="text-2xl font-bold">Stables</span>
+            <Image
+              src="/images/stables-logo.png"
+              alt="Stables"
+              width={32}
+              height={32}
+              className="rounded-full"
+            />
+            <span className="text-2xl font-semibold">Stables</span>
           </motion.div>
 
           <Reveal delay={0.5}>
