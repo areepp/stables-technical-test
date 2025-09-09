@@ -1,4 +1,15 @@
+'use client'
+
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu'
+import { LogOut, User } from 'lucide-react'
+import Link from 'next/link'
 import { Reveal } from './reveal'
+import { Button } from './ui/button'
 
 const Header = () => {
   return (
@@ -11,6 +22,23 @@ const Header = () => {
             </div>
             <span className="text-lg font-semibold text-gray-900">Stables</span>
           </div>
+        </Reveal>
+        <Reveal>
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button variant="ghost" size="icon">
+                <User className="h-5 w-5 text-gray-700" />
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent className="w-32" align="center">
+              <DropdownMenuItem asChild>
+                <Link href="/login" className="w-full">
+                  <LogOut className="mr-2 h-4 w-4" />
+                  <span className="text-xs font-bold">Log In</span>
+                </Link>
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
         </Reveal>
       </div>
     </header>
