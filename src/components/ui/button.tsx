@@ -53,6 +53,14 @@ function Button({
 }: TButtonProps) {
   const Comp = asChild ? Slot : 'button'
 
+  if (asChild) {
+    return (
+      <Slot className={cn(buttonVariants({ variant, size, className }))} {...props}>
+        {children}
+      </Slot>
+    )
+  }
+
   return (
     <Comp
       data-slot="button"
