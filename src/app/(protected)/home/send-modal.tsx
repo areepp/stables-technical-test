@@ -1,13 +1,13 @@
 'use client'
 
 import { STABLE_COINS, StablecoinDropdown } from '@/components/stable-coin-dropdown'
-import { Button } from '@/components/ui/button'
+import { HoverButton } from '@/components/ui/button-hover'
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog'
 import { Input } from '@/components/ui/input'
 import { thousandSeparatorMaskOptions } from '@/lib/maskito'
 import { useMaskito } from '@maskito/react'
 import { DialogTrigger } from '@radix-ui/react-dialog'
-import { ArrowUpRight } from 'lucide-react'
+import { ArrowUpRight, Send } from 'lucide-react'
 import { useState } from 'react'
 
 export function SendModal() {
@@ -40,9 +40,10 @@ export function SendModal() {
   return (
     <Dialog open={isOpen} onOpenChange={handleOpenChange}>
       <DialogTrigger asChild>
-        <Button size="lg" variant="outline-no-shadow" startIcon={<ArrowUpRight />}>
+        <HoverButton size="lg" variant="outline-no-shadow" hoverContent={<Send size={20} />}>
+          <ArrowUpRight size={20} />
           Send
-        </Button>
+        </HoverButton>
       </DialogTrigger>
       <DialogContent className="sm:max-w-xs">
         <DialogHeader>
@@ -78,14 +79,14 @@ export function SendModal() {
             </div>
           </div>
 
-          <Button
+          <HoverButton
             onClick={handleSend}
             disabled={!recipient || !amount || Number.parseFloat(amount) <= 0}
             className="mt-4 w-full"
-            startIcon={<ArrowUpRight />}
+            hoverContent={<Send scale={20} />}
           >
             Send {selectedCoin.symbol}
-          </Button>
+          </HoverButton>
         </div>
       </DialogContent>
     </Dialog>

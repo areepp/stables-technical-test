@@ -1,6 +1,7 @@
 'use client'
 
 import { Button } from '@/components/ui/button'
+import { HoverButton } from '@/components/ui/button-hover'
 import {
   Dialog,
   DialogContent,
@@ -10,7 +11,7 @@ import {
 } from '@/components/ui/dialog'
 import useCopyToClipboard from '@/hooks/use-copy-to-clipboard'
 import { MOCK_WALLET_ADDRESS } from '@/lib/constants'
-import { ArrowDownLeft, Check, Copy } from 'lucide-react'
+import { ArrowDownLeft, Check, Copy, HandCoins } from 'lucide-react'
 import { useState } from 'react'
 import QRCode from 'react-qr-code'
 
@@ -22,14 +23,15 @@ export function ReceiveModal() {
   return (
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
       <DialogTrigger>
-        <Button
+        <HoverButton
           size="lg"
           variant="outline-no-shadow"
           className="w-full"
-          startIcon={<ArrowDownLeft />}
+          hoverContent={<HandCoins size={20} />}
         >
+          <ArrowDownLeft size={20} />
           Receive
-        </Button>
+        </HoverButton>
       </DialogTrigger>
       <DialogContent className="sm:max-w-xs">
         <DialogHeader>
