@@ -57,9 +57,13 @@ export function StablecoinDropdown({
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant={variant} size="sm" className="flex items-center font-bold">
+        <Button
+          variant={variant}
+          size="sm"
+          className="flex items-center font-bold"
+          endIcon={<ChevronDown />}
+        >
           <span>{value.symbol}</span>
-          <ChevronDown className="h-4 w-4" />
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-40">

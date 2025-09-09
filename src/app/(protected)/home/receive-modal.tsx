@@ -22,8 +22,12 @@ export function ReceiveModal() {
   return (
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
       <DialogTrigger>
-        <Button size="lg" variant="outline-no-shadow" className="w-full">
-          <ArrowDownLeft className="mr-2 h-5 w-5" />
+        <Button
+          size="lg"
+          variant="outline-no-shadow"
+          className="w-full"
+          startIcon={<ArrowDownLeft />}
+        >
           Receive
         </Button>
       </DialogTrigger>

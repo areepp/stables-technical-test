@@ -37,9 +37,20 @@ const buttonVariants = cva(
 type TButtonProps = React.ComponentProps<'button'> &
   VariantProps<typeof buttonVariants> & {
     asChild?: boolean
+    startIcon?: React.ReactNode
+    endIcon?: React.ReactNode
   }
 
-function Button({ className, variant, size, asChild = false, ...props }: TButtonProps) {
+function Button({
+  className,
+  variant,
+  size,
+  asChild = false,
+  children,
+  startIcon,
+  endIcon,
+  ...props
+}: TButtonProps) {
   const Comp = asChild ? Slot : 'button'
 
   return (
@@ -47,7 +58,26 @@ function Button({ className, variant, size, asChild = false, ...props }: TButton
       data-slot="button"
       className={cn(buttonVariants({ variant, size, className }))}
       {...props}
-    />
+    >
+      {startIcon && (
+        <Slot
+          className="mr-2"
+          // @ts-expect-error: size prop is not typed
+          size={20}
+        >
+          {startIcon}
+        </Slot>
+      )}
+      {children}
+      {endIcon && (
+        <Slot
+          // @ts-expect-error: size prop is not typed
+          size={20}
+        >
+          {endIcon}
+        </Slot>
+      )}
+    </Comp>
   )
 }
 

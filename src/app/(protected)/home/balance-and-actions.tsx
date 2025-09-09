@@ -14,7 +14,7 @@ export default function BalanceAndActions() {
       <span className="text-muted-foreground text-sm">Balance</span>
       <div className="flex items-center justify-between">
         <div className="text-card-foreground text-xl font-bold">
-          11,500.38 {selectedCoin.symbol}
+          {selectedCoin.balance} {selectedCoin.symbol}
         </div>
         <StablecoinDropdown value={selectedCoin} onValueChange={setSelectedCoin} />
       </div>

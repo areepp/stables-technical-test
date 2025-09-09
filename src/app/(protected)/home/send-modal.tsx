@@ -40,8 +40,7 @@ export function SendModal() {
   return (
     <Dialog open={isOpen} onOpenChange={handleOpenChange}>
       <DialogTrigger asChild>
-        <Button size="lg" variant="outline-no-shadow">
-          <ArrowUpRight className="mr-2 h-5 w-5" />
+        <Button size="lg" variant="outline-no-shadow" startIcon={<ArrowUpRight />}>
           Send
         </Button>
       </DialogTrigger>
@@ -83,8 +82,8 @@ export function SendModal() {
             onClick={handleSend}
             disabled={!recipient || !amount || Number.parseFloat(amount) <= 0}
             className="mt-4 w-full"
+            startIcon={<ArrowUpRight />}
           >
-            <ArrowUpRight className="mr-2 h-4 w-4" />
             Send {selectedCoin.symbol}
           </Button>
         </div>
