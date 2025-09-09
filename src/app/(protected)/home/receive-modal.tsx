@@ -27,13 +27,13 @@ export function ReceiveModal() {
           Receive
         </Button>
       </DialogTrigger>
-      <DialogContent className="sm:max-w-md">
+      <DialogContent className="sm:max-w-xs">
         <DialogHeader>
-          <DialogTitle className="text-center text-xl font-semibold">Receive</DialogTitle>
+          <DialogTitle>Receive</DialogTitle>
         </DialogHeader>
 
         <div className="flex flex-col items-center space-y-6 py-4">
-          <div className="bg-muted border-border flex h-48 w-48 items-center justify-center rounded-lg border-2 border-dashed">
+          <div className="bg-muted border-border flex h-32 w-32 items-center justify-center rounded-lg border-2 border-dashed">
             <QRCode
               value={MOCK_WALLET_ADDRESS}
               style={{ height: 'auto', maxWidth: '100%', width: '100%' }}

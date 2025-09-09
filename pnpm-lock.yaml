@@ -8,6 +8,15 @@ importers:
 
   .:
     dependencies:
+      '@maskito/core':
+        specifier: ^3.10.3
+        version: 3.10.3
+      '@maskito/kit':
+        specifier: ^3.10.3
+        version: 3.10.3(@maskito/core@3.10.3)
+      '@maskito/react':
+        specifier: ^3.10.3
+        version: 3.10.3(@maskito/core@3.10.3)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       '@radix-ui/react-checkbox':
         specifier: ^1.3.3
         version: 1.3.3(@types/react-dom@19.1.9(@types/react@19.1.12))(@types/react@19.1.12)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
@@ -322,6 +331,21 @@ packages:
 
   '@jridgewell/trace-mapping@0.3.30':
     resolution: {integrity: sha512-GQ7Nw5G2lTu/BtHTKfXhKHok2WGetd4XYcVKGx00SjAk8GMwgJM3zr6zORiPGuOE+/vkc90KtTosSSvaCjKb2Q==}
+
+  '@maskito/core@3.10.3':
+    resolution: {integrity: sha512-4SZeEF6PjDHC+J5ADrJaSrFmgqmGkqfE5Yi6BrNXze9TGvVRy9aHJCizShFvheqCEu6MsK0XprZot28wH9AhjQ==}
+
+  '@maskito/kit@3.10.3':
+    resolution: {integrity: sha512-4IAL5WPlz4zi6vCMp8KbSAVh67WT+o0PzQ56dU4E7crN1jzBm1cN7MIbGawefOIXwAiqCb8zOSyTv/qqSL0xGQ==}
+    peerDependencies:
+      '@maskito/core': ^3.10.3
+
+  '@maskito/react@3.10.3':
+    resolution: {integrity: sha512-H8UDtfunReHeybozzp0O0zboVI044anQ4h9bwctI88QB0fVlhJBPTR3R4Xky1BT8D5+bICNEF2SlsaZq9UKEbg==}
+    peerDependencies:
+      '@maskito/core': ^3.10.3
+      react: '>=16.8'
+      react-dom: '>=16.8'
 
   '@napi-rs/wasm-runtime@0.2.12':
     resolution: {integrity: sha512-ZVWUcfwY4E/yPitQJl481FjFo3K22D6qF0DuFH6Y/nbnE11GY5uguDxZMGXPQ8WQ0128MXQD7TnfHyK4oWoIJQ==}
@@ -2561,6 +2585,18 @@ snapshots:
     dependencies:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.5
+
+  '@maskito/core@3.10.3': {}
+
+  '@maskito/kit@3.10.3(@maskito/core@3.10.3)':
+    dependencies:
+      '@maskito/core': 3.10.3
+
+  '@maskito/react@3.10.3(@maskito/core@3.10.3)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)':
+    dependencies:
+      '@maskito/core': 3.10.3
+      react: 19.1.0
+      react-dom: 19.1.0(react@19.1.0)
 
   '@napi-rs/wasm-runtime@0.2.12':
     dependencies:

@@ -14,7 +14,7 @@ const useCopyToClipboard = () => {
       setIsCopied(true)
       setTimeout(() => {
         setIsCopied(false)
-      }, 2000)
+      }, 5000)
     } catch (err) {
       console.error('Failed to copy: ', err)
     }
