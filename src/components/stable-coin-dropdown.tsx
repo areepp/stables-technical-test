@@ -71,7 +71,6 @@ export function StablecoinDropdown({
           <DropdownMenuItem
             key={coin.symbol}
             onSelect={() => {
-              console.log('coin', coin)
               onValueChange(coin)
             }}
           >
